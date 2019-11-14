@@ -1,0 +1,6 @@
+framework module Pods_ParsyChatUITests {
+  umbrella header "Pods-ParsyChatUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
