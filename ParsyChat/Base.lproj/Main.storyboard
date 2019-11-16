@@ -75,7 +75,7 @@
                     <connections>
                         <outlet property="passwordField" destination="Yfs-py-zTP" id="Gm4-47-ZM0"/>
                         <outlet property="usernameField" destination="A8L-Ip-3Nj" id="iBR-Tp-FxN"/>
-                        <segue destination="d4X-2R-Msp" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="Z8h-2O-fwk"/>
+                        <segue destination="d4X-2R-Msp" kind="presentation" identifier="loginSegue" modalPresentationStyle="currentContext" id="Z8h-2O-fwk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -85,7 +85,7 @@
         <!--Chat-->
         <scene sceneID="CD8-Lw-Enc">
             <objects>
-                <viewController id="dNG-6x-1uM" customClass="ChatViewController" customModule="ParsyChat" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" title="Chat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dNG-6x-1uM" customClass="ChatViewController" customModule="ParsyChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MGH-1Y-qW4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -145,11 +145,10 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="fvt-Oi-AO7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Chat" id="aiX-ZH-lUb"/>
+                    <navigationItem key="navigationItem" title="Chat" largeTitleDisplayMode="always" id="aiX-ZH-lUb"/>
                     <connections>
                         <outlet property="messageField" destination="ekw-Tl-x6U" id="GhW-29-fTd"/>
                         <outlet property="tableView" destination="2Ud-yk-Cdt" id="TTt-hc-CFV"/>

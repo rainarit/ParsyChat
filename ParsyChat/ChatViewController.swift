@@ -43,20 +43,35 @@ class ChatViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tableView.dataSource = self
         // Auto size row height based on cell autolayout constraints
         tableView.rowHeight = UITableView.automaticDimension
         // Provide an estimated row height. Used for calculating scroll indicator
         tableView.estimatedRowHeight = 50
         queryMessages()
         onTimer()
+        
+        
+    }
+    
+    func refresh() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlAction(_:)), for: UIControl.Event.valueChanged)
+    }
+    
+    @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        queryMessages()
+        refreshControl.endRefreshing()
     }
     
     @IBAction func send(_ sender: Any) {
         let chatMessage = PFObject(className: "Message")
         chatMessage["text"] = messageField.text ?? ""
+        chatMessage["user"] = PFUser.current()
         chatMessage.saveInBackground { (success, error) in
             if success {
                 print("The message was saved!")
+                self.messageField.text = ""
             }
             else if let error = error {
                 print("Problem saving message: \(error.localizedDescription)")

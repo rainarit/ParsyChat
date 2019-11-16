@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let currentUser = PFUser.current() {
             print("Welcome back \(currentUser.username!) 😀")
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let chatViewController = storyboard.instantiateViewController(withIdentifier: "ChatViewController")
+            let chatViewController = storyboard.instantiateViewController(withIdentifier: "ChatViewController") as! UIViewController
             window?.rootViewController = chatViewController
         }
         guard let _ = (scene as? UIWindowScene) else { return }
