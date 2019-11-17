@@ -18,7 +18,7 @@ class ChatViewController: UIViewController, UITableViewDataSource {
     var timer: Timer?
     
     @objc func onTimer() {
-       // Add code to be run periodically
+       // Add code to be run periodically 
         Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true)
     }
     
